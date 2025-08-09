@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorex Silk Soft Bra - Premium Comfortable Wireless Bra</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Sorex Silk Soft Bra - Bra premium tanpa kawat dengan bahan selembut sutra. Nyaman dipakai seharian. Diskon 30% hanya di sini!">
+    <meta name="keywords" content="bra premium, bra tanpa kawat, bra nyaman, sorex silk bra">
+    <meta property="og:title" content="Sorex Silk Soft Bra - Premium Comfortable">
+    <meta property="og:description" content="Bra premium tanpa kawat dengan bahan selembut sutra">
+    <meta property="og:image" content="https://cdn.orderonline.id/uploads/images_8845261754674185746.png">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --wine: #722f37;
+            --burgundy: #800020;
+            --rose-gold: #e8b4b8;
+            --cream: #f5f5dc;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+        
+        /* Gradient Backgrounds */
+        .gradient-hero {
+            background: linear-gradient(135deg, var(--wine) 0%, var(--burgundy) 100%);
+        }
+        
+        .gradient-soft {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--rose-gold) 100%);
+        }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        
+        /* Testimonial Carousel */
+        .testimonial-carousel {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 50%;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .testimonial-card {
+                flex: 0 0 33.333%;
+            }
+        }
+        
+        /* Social Proof Popup */
+        .social-proof-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 350px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 16px;
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .social-proof-popup.show {
+            transform: translateX(0);
+        }
+        
+        /* Countdown Timer */
+        .countdown-timer {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .countdown-item {
+            background: var(--burgundy);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        /* OrderOnline Form Styling */
+        .orderonline-embed-form {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 16px !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            padding: 2rem !important;
+            margin: 2rem 0 !important;
+        }
+        
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--burgundy);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transform: translateY(100px);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+        
+        /* Responsive Images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--burgundy);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Social Proof Popup -->
+    <div id="socialProofPopup" class="social-proof-popup">
+        <div class="flex items-start gap-3">
+            <img id="spAvatar" class="w-10 h-10 rounded-full object-cover" src="" alt="Customer">
+            <div>
+                <p id="spText" class="text-sm text-gray-800 mb-1"></p>
+                <p class="text-xs text-gray-500" id="spTime"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-4 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="font-lato text-4xl lg:text-6xl font-bold mb-6">
+                        Sorex Silk Soft Bra
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-6 opacity-90">
+                        Bra Premium Tanpa Kawat - Selembut Sutra untuk Kenyamanan Seharian
+                    </p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-3xl font-bold">Rp 188.000</span>
+                        <span class="text-xl line-through opacity-75">Rp 266.000</span>
+                        <span class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">-30%</span>
+                    </div>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="mb-8">
+                        <p class="text-sm mb-2">Penawaran Berakhir Dalam:</p>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <span id="hours">24</span>
+                                <div class="text-xs">Jam</div>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes">00</span>
+                                <div class="text-xs">Menit</div>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="seconds">00</span>
+                                <div class="text-xs">Detik</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="scrollToOrder()" class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                        Pesan Sekarang
+                    </button>
+                    
+                    <!-- Trust Badges -->
+                    <div class="flex gap-4 mt-8">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-yellow-400"></i>
+                            <span class="text-sm">Garansi 7 Hari</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-shipping-fast text-yellow-400"></i>
+                            <span class="text-sm">Gratis Ongkir</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-undo text-yellow-400"></i>
+                            <span class="text-sm">Pengembalian Mudah</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Image -->
+                <div class="relative">
+                    <div class="glass-card rounded-2xl p-8 float-animation">
+                        <img src="https://cdn.orderonline.id/uploads/images_8845261754674185746.png" 
+                             alt="Sorex Silk Soft Bra" 
+                             class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+                        BEST SELLER
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold mb-12">
+                Kenapa Sorex Silk Soft Bra?
+            </h2>
+            <div class="max-w-2xl mx-auto space-y-6">
+                <div>
+                    <h3 class="font-lato text-xl font-bold mb-1">Tanpa Kawat</h3>
+                    <p class="text-gray-600">Mendukung alami tanpa berasa terikat.</p>
+                </div>
+                <div>
+                    <h3 class="font-lato text-xl font-bold mb-1">Bahan Lembut</h3>
+                    <p class="text-gray-600">Selembut sutra, adem dipakai seharian.</p>
+                </div>
+                <div>
+                    <h3 class="font-lato text-xl font-bold mb-1">Fit Sesuai Gaya</h3>
+                    <p class="text-gray-600">Full cup + kait 3 posisi untuk kenyamanan maksimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold text-center mb-12">
+                Galeri Produk
+            </h2>
+            
+            <div class="product-gallery">
+                <div class="gallery-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasg-m64yjd9n0cjmc0.webp" 
+                         alt="Sorex Bra Black" 
+                         onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasf-m64yjd9czcew23.webp" 
+                         alt="Sorex Bra Cokmuda" 
+                         onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasg-m64yjd92yclc30.webp" 
+                         alt="Sorex Bra Ungu" 
+                         onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasi-m64yjd9ncznma7@resize_w450_nl.webp" 
+                         alt="Sorex Bra Rose" 
+                         onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Chart -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold text-center mb-12">
+                Panduan Ukuran
+            </h2>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gradient-soft">
+                                <th class="p-4 text-left font-lato font-bold">Ukuran</th>
+                                <th class="p-4 text-left font-lato font-bold">Lingkar Dada (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4">36</td>
+                                <td class="p-4">69 - 88</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">38</td>
+                                <td class="p-4">70 - 92</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">40</td>
+                                <td class="p-4">76 - 97</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">42</td>
+                                <td class="p-4">79 - 105</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">
+                    *Untuk hasil terbaik, ukur lingkar dada Anda dengan tape measure
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold text-center mb-12">
+                Apa Kata Pelanggan Kami?
+            </h2>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/21/99/58/2199588eac3ba7e5548c3cc8fcfd9b21.jpg" 
+                                     alt="Ayunda" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-bold">ayunda</h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Baru pertama kali beli melalui online, tp tetap <span class="text-burgundy font-bold">puas sesuai ekspektasi</span>
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbk4-m7d81u0js1w516.webp" 
+                                 alt="Review Ayunda" 
+                                 class="w-full h-20 object-cover rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/85/a3/64/85a364903e1a59cfedd68e1dc32f202b.jpg" 
+                                     alt="Amelia" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-bold">amelia</h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                <span class="text-burgundy font-bold">Halus banget sis</span>. Bener natural feel ini. Bb 61 kg tb 155 cm, size 36 pas. LD 90 lebih dikit
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbka-m6i8729zof3ge2.webp" 
+                                 alt="Review Amelia" 
+                                 class="w-full h-20 object-cover rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/1a/16/35/1a16353cf9889a9074af44f0d038bca3.jpg" 
+                                     alt="Risa" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-bold">risa</h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Oke oke oke. Cuma pengirimannya aja kurang aman. Tapi. <span class="text-burgundy font-bold">Untung sampe rumah</span> cuma robek dikit bubble wrap nya
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbka-m68ax7evchhee1.webp" 
+                                 alt="Review Risa" 
+                                 class="w-full h-20 object-cover rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="bg-white rounded-lg p-6 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <img src="https://i.pinimg.com/736x/81/a7/1c/81a71cb42a7511effc568072c5c68472.jpg" 
+                                     alt="Akila" 
+                                     class="w-10 h-10 rounded-full mr-3">
+                                <div>
+                                    <h4 class="font-bold">akila**f</h4>
+                                    <div class="text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                <span class="text-burgundy font-bold">Masalah kualitas tidak perlu diragukan lagi</span> pokoknya nyaman
+                            </p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbk0-m6gi9vl6rkbx3e.webp" 
+                                 alt="Review Akila" 
+                                 class="w-full h-20 object-cover rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <div class="flex justify-center mt-8 gap-2">
+                    <button onclick="prevTestimonial()" class="bg-burgundy text-white px-4 py-2 rounded-full">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextTestimonial()" class="bg-burgundy text-white px-4 py-2 rounded-full">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilihan Warna -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold text-center mb-12">
+                Pilihan Warna
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasi-m64yjd92zr5sb7@resize_w450_nl.webp" 
+                         alt="Hitam" 
+                         class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                         onclick="openLightbox(this.src)">
+                    <p class="mt-2 font-semibold text-gray-700">Hitam</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m64yjd9315q8fc@resize_w450_nl.webp" 
+                         alt="Cokmuda" 
+                         class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                         onclick="openLightbox(this.src)">
+                    <p class="mt-2 font-semibold text-gray-700">Cokmuda</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasg-m64yjd933yv4c8@resize_w450_nl.webp" 
+                         alt="Ungu" 
+                         class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                         onclick="openLightbox(this.src)">
+                    <p class="mt-2 font-semibold text-gray-700">Ungu</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasi-m64yjd9ncznma7@resize_w450_nl.webp" 
+                         alt="Rose" 
+                         class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                         onclick="openLightbox(this.src)">
+                    <p class="mt-2 font-semibold text-gray-700">Rose</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m77q422na0pzf8@resize_w450_nl.webp" 
+                         alt="Abu Tua" 
+                         class="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                         onclick="openLightbox(this.src)">
+                    <p class="mt-2 font-semibold text-gray-700">Abu Tua</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="orderSection" class="py-20 gradient-soft">
+        <div class="container mx-auto px-4">
+            <h2 class="font-lato text-3xl lg:text-4xl font-bold text-center mb-12">
+                Pesan Sekarang - Stok Terbatas!
+            </h2>
+            
+            <div class="max-w-2xl mx-auto">
+                <!-- OrderOnline Embed -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" 
+                          data-username="mila" 
+                          data-product-slug="sorex-silk-soft-bra" 
+                          data-product-id="68962f5c0b62b5d78205a040" 
+                          id="oo-embed-form-sorex-silk-soft-bra-5789" 
+                          data-origin="orderonline">
+                        <div class="ooef-loader">
+                            <style>
+                                .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                                @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                                .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                                .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                                @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                                @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                            </style>
+                            <div aria-live="polite" role="status">
+                                <div>Loading...</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- WhatsApp Quick Order -->
+                <div class="text-center mt-8">
+                    <p class="text-gray-600 mb-4">Atau pesan langsung via WhatsApp</p>
+                    <a href="https://wa.me/6281225681788?text=Halo%20saya%20mau%20order%20Sorex%20Silk%20Soft%20Bra" 
+                       class="bg-green-500 text-white px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        Pesan via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-lato text-xl font-bold mb-4">Sorex Silk Soft Bra</h3>
+                    <p class="text-gray-400">
+                        Bra premium dengan kualitas terbaik untuk kenyamanan seharian.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Informasi</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Panduan Ukuran</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Pengembalian</a></li>
+                        <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Hubungi Kami</h4>
+                    <p class="text-gray-400">
+                        WhatsApp: 0812-2568-1788<br>
+                        Email: support@sorex.co.id
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sorex Silk Soft Bra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" src="" alt="">
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <button onclick="scrollToOrder()" class="flex items-center gap-2">
+            <i class="fas fa-shopping-cart"></i>
+            Pesan Sekarang
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // OrderOnline Embed
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                    if (!w._ooe) w._ooe = n;
+                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://mila.orderonline.id');
+            ooe('init', '5f1a7b8fa9bf807da24d83bb', '68962f5c0b62b5d78205a040', '68962f5c0b62b5d78205a041', 'oo-embed-form-sorex-silk-soft-bra-5789', {
+                "mode":"page",
+                "action":"Klik untuk pemesanan",
+                "title":"Form Pemesanan",
+                "triggerPixel":true,
+                "triggerGtm":true
+            });
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 1);
+            targetDate.setHours(0, 0, 0, 0);
+
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const track = document.getElementById('testimonialTrack');
+        const testimonials = document.querySelectorAll('.testimonial-card');
+
+        function updateCarousel() {
+            const width = testimonials[0].offsetWidth;
+            track.style.transform = `translateX(-${currentTestimonial * width}px)`;
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % (testimonials.length - 2);
+            updateCarousel();
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = currentTestimonial === 0 ? testimonials.length - 3 : currentTestimonial - 1;
+            updateCarousel();
+        }
+
+        // Auto-scroll testimonials
+        setInterval(() => {
+            nextTestimonial();
+        }, 5000);
+
+        // Social Proof Popup
+        const customers = ['Winda', 'Meisya', 'Lestari', 'Intan', 'Putri', 'Maya Sari', 'Rani', 'mila', 'ulinF'];
+        const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang'];
+        const avatars = [
+            'https://i.pinimg.com/736x/7c/ae/2d/7cae2d608533ea53a87954bdddaf87db.jpg',
+            'https://i.pinimg.com/736x/1a/16/35/1a16353cf9889a9074af44f0d038bca3.jpg',
+            'https://i.pinimg.com/736x/21/99/58/2199588eac3ba7e5548c3cc8fcfd9b21.jpg',
+            'https://i.pinimg.com/736x/0c/29/32/0c2932e0e226da87256b40ffbeaed302.jpg',
+            'https://i.pinimg.com/736x/85/a3/64/85a364903e1a59cfedd68e1dc32f202b.jpg',
+            'https://i.pinimg.com/736x/04/03/c1/0403c15bbb473a3eb0e98fff4b88e0e2.jpg',
+            'https://i.pinimg.com/736x/ca/07/09/ca07097de9245bcbdd52686cd1ad932e.jpg',
+            'https://i.pinimg.com/736x/43/6b/30/436b30945955ec8bea9c4a80eb486557.jpg'
+        ];
+
+        function showSocialProof() {
+            const popup = document.getElementById('socialProofPopup');
+            const name = customers[Math.floor(Math.random() * customers.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+            const minutes = Math.floor(Math.random() * 15) + 1;
+
+            document.getElementById('spText').textContent = `${name} dari ${city} baru saja memesan sorex silk soft bra`;
+            document.getElementById('spTime').textContent = `${minutes} menit yang lalu`;
+            document.getElementById('spAvatar').src = avatar;
+
+            popup.classList.add('show', 'slide-in');
+            
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show social proof every 8 seconds
+        setInterval(showSocialProof, 8000);
+
+        // Sticky CTA
+        window.addEventListener('scroll', () => {
+            const stickyCta = document.getElementById('stickyCta');
+            if (window.scrollY > 300) {
+                stickyCta.classList.add('show');
+            } else {
+                stickyCta.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to order
+        function scrollToOrder() {
+            document.getElementById('orderSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize
+        updateCountdown();
+        setTimeout(showSocialProof, 2000);
+    </script>
+</body>
+</html>
